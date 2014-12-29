@@ -1,0 +1,8 @@
+{
+  "name": "axe-heroine",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.10.6",
+    "handlebars": "^2.0.0"
+  }
+}

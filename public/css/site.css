@@ -1,0 +1,40 @@
+body {
+    background-color: #262626;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0 auto;
+    width: 50%;
+}
+.string {
+    border: 1px solid #262626;
+    display: inline;
+    float: left;
+    height: 20px;
+    width: 20px;
+}
+.string-middle {
+    display: inline;
+}
+.fret {
+    display: block;
+}
+#fret-9 td {
+    border: 1px solid #999999;
+    display: inline;
+    float: left;
+    height: 20px;
+    width: 20px;
+}
+#score {
+    border-top: 1px solid white;
+    padding-left:110px;
+    padding-top: 5px;
+}
+#start {
+    background-color: #262626;
+    border: 1px solid white;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    margin: 10px;
+}

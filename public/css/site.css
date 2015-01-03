@@ -19,15 +19,36 @@ body {
     display: block;
 }
 #fret-9 td {
-    border: 1px solid #999999;
+    background: #555555;
     display: inline;
     float: left;
     height: 20px;
     width: 20px;
 }
+
+#fret-9 .first {
+    border: 1px solid green;
+}
+
+#fret-9 .second {
+    border: 1px solid red;
+}
+
+#fret-9 .third {
+    border: 1px solid yellow;
+}
+
+#fret-9 .forth {
+    border: 1px solid blue;
+}
+
+#fret-9 .fifth {
+    border: 1px solid orange;
+}
+
 #score {
     border-top: 1px solid white;
-    padding-left:110px;
+    padding-left:150px;
     padding-top: 5px;
 }
 #start {

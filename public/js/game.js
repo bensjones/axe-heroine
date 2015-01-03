@@ -5,7 +5,7 @@ $("#start").click(main);
 
 function main() {
   //execute sequence on fret preview
-    score = 0;
+  score = 0;
   $("#score").text("SCORE: " + score);
   for (var i = 1; i < 10; i++) {
     for (var j = 0; j < tabs.length; j++) {
@@ -34,16 +34,19 @@ function showRow(fret, tab) {
 function showFret(stringId, stringNumber) {
   switch (stringNumber) {
     case 1:
-      $(stringId).css("background-color", "red");
-      break;
-    case 2:
-      $(stringId).css("background-color", "blue");
-      break;
-    case 3:
       $(stringId).css("background-color", "green");
       break;
-    case 4:
+    case 2:
+      $(stringId).css("background-color", "red");
+      break;
+    case 3:
       $(stringId).css("background-color", "yellow");
+      break;
+    case 4:
+      $(stringId).css("background-color", "blue");
+      break;
+    case 5:
+      $(stringId).css("background-color", "orange");
       break;
   }
 }
@@ -53,9 +56,10 @@ function clearFret(stringId) {
 }
 
 function hammer(event) {
+  console.log(event.keyCode);
   switch (event.keyCode) {
     case 97:
-      if ($("#string-9-1").css("background-color") === "#ff0000") {
+      if ($("#string-9-1").css("background-color") === "#008000") {
         score += 1000;
       } else {
         score -= 250;
@@ -63,7 +67,7 @@ function hammer(event) {
       $("#string-9-1").css("background-color", "white");
       break;
     case 115:
-      if ($("#string-9-2").css("background-color") === "#0000ff") {
+      if ($("#string-9-2").css("background-color") === "#ff0000") {
         score += 1000;
       } else {
         score -= 250;
@@ -71,7 +75,7 @@ function hammer(event) {
       $("#string-9-2").css("background-color", "white");
       break;
     case 100:
-      if ($("#string-9-3").css("background-color") === "#008000") {
+      if ($("#string-9-3").css("background-color") === "#ffff00") {
         score += 1000;
       } else {
         score -= 250;
@@ -79,13 +83,21 @@ function hammer(event) {
       $("#string-9-3").css("background-color", "white");
       break;
     case 102:
-      if ($("#string-9-3").css("background-color") === "#0000ff") {
+      if ($("#string-9-4").css("background-color") === "#0000ff") {
         score += 1000;
       } else {
         score -= 250;
       }
-
       $("#string-9-4").css("background-color", "white");
+      break;
+    case 103:
+        debugger;
+      if ($("#string-9-5").css("background-color") === "#ffa500") {
+        score += 1000;
+      } else {
+        score -= 250;
+      }
+      $("#string-9-5").css("background-color", "white");
       break;
   }
   $("#score").text("SCORE: " + score);
@@ -94,8 +106,34 @@ function hammer(event) {
   window.setTimeout(clearFret, 100, "#string-9-2");
   window.setTimeout(clearFret, 100, "#string-9-3");
   window.setTimeout(clearFret, 100, "#string-9-4");
+  window.setTimeout(clearFret, 100, "#string-9-5");
 
 }
+
+//feed the tabs
+var tabs = [
+  [1, 0, 0, 0, 0],
+  [0, 1, 0, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 0],
+  [0, 1, 0, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 1, 0, 0, 0],
+  [0, 1, 0, 0, 0],
+  [0, 1, 0, 0, 0],
+  [0, 1, 0, 0, 0],
+  [1, 0, 0, 0, 0],
+  [0, 1, 0, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 0, 0, 0],
+  [2, 2, 2, 2, 2]
+];
 
 //helper for rgb to hex found on stackoverflow.com
 //http://stackoverflow.com/a/6177502/466321
@@ -119,30 +157,3 @@ $.cssHooks.backgroundColor = {
   }
 };
 
-//feed the tabs
-var tabs = [
-  [0, 1, 0, 1],
-  [0, 0, 0, 0],
-  [0, 1, 0, 1],
-  [0, 0, 0, 0],
-  [0, 1, 1, 0],
-  [0, 1, 1, 0],
-  [0, 1, 1, 0],
-  [0, 0, 0, 0],
-  [1, 1, 0, 0],
-  [0, 0, 0, 0],
-  [1, 1, 0, 0],
-  [1, 1, 0, 0],
-  [1, 1, 0, 0],
-  [0, 1, 1, 0],
-  [0, 1, 1, 0],
-  [0, 1, 1, 0],
-  [1, 1, 0, 0],
-  [1, 1, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [2, 2, 2, 2]
-];

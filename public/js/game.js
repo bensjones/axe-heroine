@@ -8,15 +8,15 @@ function main() {
   score = 0;
   $("#score").text("SCORE: " + score);
   for (var i = 1; i < 10; i++) {
-    for (var j = 0; j < tabs.length; j++) {
+    for (var j = 0; j < song.tab.length; j++) {
       window.setTimeout(runSequence, 400 * i, i);
     }
   }
 }
 
 function runSequence(id) {
-  for (var j = 0; j < tabs.length; j++) {
-    window.setTimeout(showRow, 400 * j, id, tabs[j]);
+  for (var j = 0; j < song.tab.length; j++) {
+    window.setTimeout(showRow, 400 * j, id, song.tab[j]);
   }
 }
 
@@ -109,31 +109,6 @@ function hammer(event) {
   window.setTimeout(clearFret, 100, "#string-9-5");
 
 }
-
-//feed the tabs
-var tabs = [
-  [1, 0, 0, 0, 0],
-  [0, 1, 0, 0, 0],
-  [0, 0, 1, 0, 0],
-  [0, 0, 0, 0, 0],
-  [1, 0, 0, 0, 0],
-  [0, 1, 0, 0, 0],
-  [0, 0, 1, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 1, 0, 0],
-  [0, 0, 1, 0, 0],
-  [0, 0, 1, 0, 0],
-  [0, 0, 1, 0, 0],
-  [0, 1, 0, 0, 0],
-  [0, 1, 0, 0, 0],
-  [0, 1, 0, 0, 0],
-  [0, 1, 0, 0, 0],
-  [1, 0, 0, 0, 0],
-  [0, 1, 0, 0, 0],
-  [0, 0, 1, 0, 0],
-  [0, 0, 0, 0, 0],
-  [2, 2, 2, 2, 2]
-];
 
 //helper for rgb to hex found on stackoverflow.com
 //http://stackoverflow.com/a/6177502/466321

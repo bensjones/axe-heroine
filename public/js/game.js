@@ -58,6 +58,7 @@ function clearFret(stringId) {
 function hammer(event) {
   console.log(event.keyCode);
   switch (event.keyCode) {
+    case 65:
     case 97:
       if ($("#string-9-1").css("background-color") === "#008000") {
         score += 1000;
@@ -66,6 +67,7 @@ function hammer(event) {
       }
       $("#string-9-1").css("background-color", "white");
       break;
+    case 83:
     case 115:
       if ($("#string-9-2").css("background-color") === "#ff0000") {
         score += 1000;
@@ -74,6 +76,7 @@ function hammer(event) {
       }
       $("#string-9-2").css("background-color", "white");
       break;
+    case 68:
     case 100:
       if ($("#string-9-3").css("background-color") === "#ffff00") {
         score += 1000;
@@ -82,6 +85,7 @@ function hammer(event) {
       }
       $("#string-9-3").css("background-color", "white");
       break;
+    case 70:
     case 102:
       if ($("#string-9-4").css("background-color") === "#0000ff") {
         score += 1000;
@@ -90,6 +94,7 @@ function hammer(event) {
       }
       $("#string-9-4").css("background-color", "white");
       break;
+    case 71:
     case 103:
         debugger;
       if ($("#string-9-5").css("background-color") === "#ffa500") {

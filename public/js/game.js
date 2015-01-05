@@ -11,6 +11,7 @@ function main() {
     for (var j = 0; j < song.tab.length; j++) {
       window.setTimeout(runSequence, 400 * i, i);
     }
+    window.setTimeout(playAudio, 3600);
   }
 }
 
@@ -18,6 +19,10 @@ function runSequence(id) {
   for (var j = 0; j < song.tab.length; j++) {
     window.setTimeout(showRow, 400 * j, id, song.tab[j]);
   }
+}
+
+function playAudio(){
+  document.getElementById('audio-file').play();
 }
 
 function showRow(fret, tab) {
@@ -56,7 +61,6 @@ function clearFret(stringId) {
 }
 
 function hammer(event) {
-  console.log(event.keyCode);
   switch (event.keyCode) {
     case 65:
     case 97:
